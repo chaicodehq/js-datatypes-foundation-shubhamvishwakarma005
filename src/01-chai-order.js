@@ -10,10 +10,10 @@
  *
  * Functions:
  *
- *   1. getChaiOrderLength(order)
+ 1. getChaiOrderLength(order)
  *      - Pehle .trim() se extra spaces hatao, phir .length se count karo
  *      - Agar order string nahi hai, return -1
- *      - Example: getChaiOrderLength("  masala chai  ") => 11
+ *      - Example: getChaiOrderLength("  masala chai  ") => 11*   
  *
  *   2. shoutChaiOrder(order)
  *      - Guddu apne helper ko UPPERCASE mein order shout karta hai
@@ -46,69 +46,47 @@
  *   hasSpecialIngredient("Elaichi Chai", "elaichi")  // => true
  */
 
-export function getChaiOrderLength(order){
-  if(typeof order !== 'string'){
+export function getChaiOrderLength(order) {
+  if (typeof order !== 'string') {
     return -1
+  } else {
+    return order.trim().length
   }
-
- let userOrder = order.trim().length;
-   return userOrder
 }
 
 export function shoutChaiOrder(order) {
-  if(typeof order !== 'string'){
+
+  if (typeof order !== 'string' || order === '') {
     return "";
+  } else {
+    return order.trim().toUpperCase()
   }
-   
-  let stdOrder = order.trim().toUpperCase()
-  if(stdOrder === ""){
-    return ""
-  }
-  return stdOrder
 }
 
 export function whisperChaiOrder(order) {
-   if(typeof order !== 'string'){
-    return ""
-   }
 
-   let secOrder = order.trim().toLowerCase()
-   if(secOrder === ""){
+  if (typeof order !== 'string' || order === "") {
     return ""
-   }
-   return secOrder
+  } else {
+    return order.trim().toLocaleLowerCase()
+  }
 }
 
 export function hasSpecialIngredient(order, ingredient) {
 
-   if(typeof order !== 'string' || typeof ingredient !== 'string'){
+  if (typeof order !== 'string' || typeof ingredient !== 'string') {
     return false
-   }
-
-   let spclOrd = order.trim().toLowerCase()
-   let ingdr = ingredient.trim().toLowerCase()
-
-   if(spclOrd.includes(ingdr)){
-    return true
-   }else{
-    return false
-   }
-
+  } else {
+    return order.toLocaleLowerCase().includes(ingredient.toLocaleLowerCase())
+  }
 }
 
 export function getFirstAndLastChar(order) {
-   if(typeof order !== 'string'){
+  if (typeof order !== 'string' || order.trim() === "") {
     return null
-   }
+  } else {
 
-   let getChar = order.trim()
-
-   if(getChar === ''){
-    return null
-   }
-
-   let fChar = getChar.charAt(0);
-   let lChar = getChar.at(-1)
-   return {first : fChar, last: lChar}
+    return { first: order.trim().charAt(0), last: order.trim().at(-1) }
+  }
 
 }
