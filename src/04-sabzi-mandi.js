@@ -117,3 +117,23 @@ export function mergeCarts(cart1, cart2) {
   return cart1.concat(cart2)
 
 }
+
+
+
+// Mode                 LastWriteTime         Length Name
+// ----                 -------------         ------ ----
+// -a----        02-04-2026     13:02           2993 01-chai-order.js
+// -a----        03-04-2026     11:42           3112 02-rangoli-maker.js
+// -a----        27-05-2026     10:08           2796 03-rickshaw-meter.js
+// -a----        09-02-2026     09:58           2480 04-sabzi-mandi.js
+// -a----        09-02-2026     09:58           2632 05-train-coach.js
+// -a----        09-02-2026     09:58           2478 06-kiryana-store.js
+// -a----        09-02-2026     09:58           2658 07-ration-card.js
+// -a----        09-02-2026     09:58           2502 08-paan-shop.js
+// -a----        09-02-2026     09:58           2780 09-postcard-writer.js
+// -a----        09-02-2026     09:58           2880 10-pincode-checker.js
+// -a----        09-02-2026     09:58           2561 11-parcel-service.js
+// -a----        09-02-2026     09:58           2834 12-thali-combo.js
+
+
+// npm run test:win -- 03-rickshaw
